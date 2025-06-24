@@ -12,3 +12,11 @@ extern "C" {
 	#include "freertos/times.h"
 
 }
+
+/** helper functions **/
+
+void WiFiEvent(WiFiEvent_t event);
+
+/** Preprocessing functions **/
+String WiFiScan();
+
