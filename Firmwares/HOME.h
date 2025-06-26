@@ -40,7 +40,7 @@ typedef uint8_t [6] mac_address_t;
 /* to the slave */
 
 /**
- * Struct struct_pairing - to Contain Pairing messages
+ * struct struct_pairing - to Contain Pairing messages
  * @msgType: either PAIRING, COMMAND or DATA
  * @id: the id assigned to the given board on the network
  * @macAddr: The Mac Address of the pairing Device
@@ -56,7 +56,7 @@ typedef struct struct_pairing
 	} pairing_t;	/* type for pairing message */
 
 /**
- * Struct struct_message - acting a mould for packages sent over espnow
+ * struct struct_message - acting a mould for packages sent over espnow
  * @msgType: either PAIRING, COMMAND or DATA
  * @id: the board id on the network
  * @volt: the voltage reading from the sensor
@@ -75,11 +75,19 @@ typedef struct_message {
 }
 
 
-/** helper functions **/
+/** Networking functions **/
 
 void WiFiEvent(WiFiEvent_t event);
+void readMacAddress(void);
+void readDataToSend(void);
+void printMAC(const uint8_t *mac_addr);
+bool addPeer(const uint8_t *peer_addr);
+void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status);
+void OnDataRecv(const uint8_t *mac_addr, const uint8_t *incomingData, int len);
+void initESP_NOW(void);
 
-/** Preprocessing functions **/
+
 String WiFiScan(void);
+/** Preprocessing functions **/
 
 /** ESP NOW functionalities */
