@@ -49,9 +49,9 @@ typedef uint8_t [6] mac_address_t;
 
 typedef struct struct_pairing
 	{
-		uint8_t msgType;
+		uint8_t msg_type;
 		uint8_t id;
-		uint8_t macAddr[6];
+		uint8_t mac[6];
 		uint8_t channel;
 	} pairing_t;	/* type for pairing message */
 
@@ -62,7 +62,7 @@ typedef struct struct_pairing
  * @volt: the voltage reading from the sensor
  * @current: The current reading from the sensor
  * @power: The power voltage * current
- * @readingId: The packet number for the sent packet
+ * @reading_id: The packet number for the sent packet
  */
 
 typedef struct_message {
@@ -71,7 +71,7 @@ typedef struct_message {
 	uint8_t volt;
 	uint8_t current;
 	uint8_t power;
-	uint8_t readingId;
+	uint8_t reading_id;
 }
 
 
