@@ -85,8 +85,7 @@ bool addPeer(const uint8_t *peer_addr);
 void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status);
 void OnDataRecv(const uint8_t *mac_addr, const uint8_t *incomingData, int len);
 void initESP_NOW(void);
-/** Web functions **/
-void initWebSocket(void);
+/** Webserver functions **/
 String processor(const String& var);
 
 
@@ -98,4 +97,7 @@ String WiFiScan(void);
 /* Websocket functions */
 
 void handleWebSocketMessage(void *arg, uint8_t *data, size_t len);
+void onEvent(AsyncWebSocket *server, AsyncWebSocketClient *client
+		void *arg, uint8_t *data, size_t len);
 
+void initWebSocket(void);
