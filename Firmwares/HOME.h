@@ -94,3 +94,8 @@ String WiFiScan(void);
 /** Preprocessing functions **/
 
 /** ESP NOW functionalities */
+
+/* Websocket functions */
+
+void handleWebSocketMessage(void *arg, uint8_t *data, size_t len);
+
