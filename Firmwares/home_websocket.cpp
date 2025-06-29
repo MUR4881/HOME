@@ -82,3 +82,33 @@ void initWebSocket(void) {
 	/*you need to add handler to your server*/
 	/* e.g server.addHandler(&ws); */
 }
+
+/* you might want ot use ws.cleanUpClient(); */
+/*t Does ws.cleanupClients(); Do?
+ * Checks for Dead Clients
+ *
+ * Scans all connected WebSocket clients.
+ *
+ * If a client has disconnected improperly (e.g., no CLOSE frame sent, network failure), it removes them.
+ *
+ * Also cleans up clients that have stalled (e.g., no Ping/Pong response).
+ *
+ * Frees Up Resources
+ *
+ * Removes disconnected clients from memory.
+ *
+ * Releases TCP sockets and buffers associated with dead connections.
+ *
+ * Helps Prevent Memory Leaks
+ *
+ * If clients disconnect abruptly (without proper WebSocket closure), they may linger in memory.
+ *
+ * cleanupClients() ensures they are properly cleaned up.
+ *
+ * When Should You Call It?
+ * Periodically (e.g., in loop() or a timer) to maintain server health.
+ *
+ * After a client disconnection event (e.g., if you detect a broken connection).
+ *
+ * Before restarting the WebSocket server to ensure no stale connections remain.
+ */ 
